@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -63,10 +66,10 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         	 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           <%=inicio%>
+          <%=inicio%> 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><button class="dropdown-item" type="submit"  name="s" value="IniciarSesion"><%=sesion%></button>     
+            <li><button class="dropdown-item" type="submit"  name="s" value="IniciarSesion"><%=sesion%></button>  
           </ul>
         </li>
         

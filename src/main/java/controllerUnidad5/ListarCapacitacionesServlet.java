@@ -78,6 +78,7 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 		
 		String op= request.getParameter("op");
 		
+		
 		if (op.equalsIgnoreCase("lista")) {
 			HttpSession sesion=request.getSession(true);
 			//List<Capacitacion> ListaCap = (List<Capacitacion>) sesion.getAttribute("capacitaciones");
@@ -87,10 +88,13 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 			
 			System.out.println("Hata aqui va bien");
 			
+			String mensaje="Debe llenar todos los datos del formulario";
+			request.setAttribute("mensaje", mensaje);
+			
 			if (request.getParameter("rutCap")==""||request.getParameter("diaCap")==""||request.getParameter("horaCap")==""||
 					request.getParameter("duracionCap")==""||request.getParameter("lugarCap")==""||request.getParameter("cantCap")==""
 					||request.getParameter("cantCap")=="") {
-				String mensaje="Debe llenar todos los datos del formulario";
+			
 				getServletContext().getRequestDispatcher("/view/crearCapacitacion.jsp").forward(request, response);
 			}else {
 				cap.setIdCap(impCap. UltimoIDLista());   

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,9 +72,10 @@
 						<button class="btn btn-primary" type="submit">Enviar</button>
 					</div>
 					
-					
+					<c:out value = "${mensaje}"/>
 
 				</form>
+				
 			</div>
 		</div>
 

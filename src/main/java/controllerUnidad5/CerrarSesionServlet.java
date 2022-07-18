@@ -20,12 +20,40 @@ public class CerrarSesionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet(request, response);
+		
+		
 		HttpSession sesion = request.getSession();
+		
+		/* String inicio="login";
+		 String login="Iniciar Sesión";
+		 
+		 request.setAttribute("inicio", inicio);
+		 request.setAttribute("login", login);
+  	        	
+		  
+    	HttpSession s1=request.getSession();
+		HttpSession s2=request.getSession();
+		
+		String us = (String)s1.getAttribute("usuario");
+		String pa = (String)s2.getAttribute("password");
+		
+    	if (us!=null && us!=""&&pa!="") {
+			//if (us.equals("admin")&& pa.equals("1234")) {
+				inicio = "Bienvenido/a "+us;
+    			login = "Cerrar Sesión";
+    			request.setAttribute("inicio", inicio);
+    			request.setAttribute("login", login);
+				//}
+		}else{
+			login="Iniciar Sesión";
+			request.setAttribute("login", login);
+		}*/
 				
 		sesion.invalidate();
 		//request.setAttribute("mensaje", "Iniciar sesión");
