@@ -19,7 +19,6 @@ public class InicioServlet extends HttpServlet {
 		getServletContext().getRequestDispatcher("/view/inicio.jsp").forward(request, response);
 		
 		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

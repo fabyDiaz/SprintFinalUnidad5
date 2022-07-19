@@ -1,18 +1,25 @@
 package implementacion;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import Interfaces.ICapacitaciones;
+import conexion.Conexion;
+import model.dao.CapacitacionDAO;
+import model.dao.ICapacitacionDao;
 import model.entity.Capacitacion;
 
 public class ImplentarCapactiacion implements ICapacitaciones{
 	
+	ICapacitacionDao dao = new CapacitacionDAO();
 		
-	List<Capacitacion> listaCap = new ArrayList<Capacitacion>();
+	//List<Capacitacion> listaCap = new ArrayList<Capacitacion>();
 	
 
-	public ImplentarCapactiacion() {
+	/*public ImplentarCapactiacion() {
 		super();
 		llenarCapacitacion();
 	}
@@ -21,14 +28,14 @@ public class ImplentarCapactiacion implements ICapacitaciones{
 	public void AgregarCapacitaciones(Capacitacion c) {
 		 listaCap.add(c);
 			// System.out.println(c.getIdCap());
-	}
+	}*/
 
 	@Override
 	public List<Capacitacion> MostrarCapacitaciones() {
-		return listaCap;
+		return dao.read();
 	}
 	
-	public Capacitacion ObtenerCapacitacion(int id) {
+/*	public Capacitacion ObtenerCapacitacion(int id) {
 		Capacitacion encontrado=null;
 		for (Capacitacion capacitacion:listaCap) {
 			if (capacitacion.getIdCap()==id) {
@@ -53,7 +60,7 @@ public class ImplentarCapactiacion implements ICapacitaciones{
 	 public int UltimoIDLista() {
 		 int i = listaCap.size()-1;
 		 return listaCap.get(i).getIdCap()+1;
-	 }
+	 }*/
 
 		
 } 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Interfaces.ICapacitaciones;
 import implementacion.ImplentarCapactiacion;
 import model.entity.Capacitacion;
 
@@ -18,18 +19,22 @@ import model.entity.Capacitacion;
 public class ListarCapacitacionesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private ICapacitaciones impCap= new ImplentarCapactiacion();
  
     public ListarCapacitacionesServlet() {
         super();
 
     }
     
-    ImplentarCapactiacion impCap= new ImplentarCapactiacion();
+   // ImplentarCapactiacion impCap= new ImplentarCapactiacion();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
 		
-		String op= new String ("op");
+		request.setAttribute("capacitaciones", impCap.MostrarCapacitaciones());
+		getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+		
+	/*	String op= new String ("op");
 		
 		if (op.equalsIgnoreCase("new")) {
 			//request.setAttribute("op", op);
@@ -39,8 +44,9 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 				
 				String id= new String ("id");
 				if(id!=null) {
-					request.setAttribute("capacitaciones", impCap.ObtenerCapacitacion(Integer.parseInt(id)));
-					request.setAttribute("op", op);
+					//request.setAttribute("capacitaciones", impCap.ObtenerCapacitacion(Integer.parseInt(id)));
+					//request.setAttribute("capacitaciones", impCap.MostrarCapacitaciones());
+					//request.setAttribute("op", op);
 					getServletContext().getRequestDispatcher("/view/crearCapacitacion.jsp").forward(request, response);
 				}else{
 					getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
@@ -48,7 +54,7 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 			}
 			
 			
-		}
+		}*/
 		
 		request.setAttribute("capacitaciones",impCap.MostrarCapacitaciones());
 		

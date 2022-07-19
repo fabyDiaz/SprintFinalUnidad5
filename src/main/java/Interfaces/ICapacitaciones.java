@@ -9,6 +9,6 @@ public interface ICapacitaciones{
 	 public List<Capacitacion> MostrarCapacitaciones();   
 	 
  
-	 public void AgregarCapacitaciones(Capacitacion c);
+	// public void AgregarCapacitaciones(Capacitacion c);
 
 }
