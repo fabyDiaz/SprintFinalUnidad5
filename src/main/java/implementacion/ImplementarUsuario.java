@@ -12,18 +12,18 @@ public class ImplementarUsuario implements IUsuarios {
 	IUsuarioDAO dao = new UsuarioDAO();
 	
 	@Override
-	public List<Usuario> MostrarCapacitaciones() {
+	public List<Usuario> MostrarUsuarios() {
 		return dao.read();
 	}
 
 	@Override
-	public Usuario LeerCapacitaciones(int run) {
+	public Usuario LeerUsuarios(int run) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void CrearCapacitaciones(Usuario u) {
+	public void CrearUsuarios(Usuario u) {
 		 dao.create(u);
 
 	}

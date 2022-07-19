@@ -41,7 +41,7 @@ public class ContactoServlet extends HttpServlet {
 		
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		//doGet(request, response);
 		
 		getServletContext().getRequestDispatcher("/view/inicio.jsp").forward(request, response);
 	}

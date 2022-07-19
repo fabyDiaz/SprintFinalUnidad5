@@ -26,7 +26,9 @@
 		<div class="row">
 			<div
 				class="col-4 shadow-sm p-4 mb-5 bg-light rounded position-absolute start-50 translate-middle-x">
-				<form class="row g-2">
+				
+				
+				<form class="row g-2"  action="ListadoUsuario" method="post">
 					<p>
 						<b>Datos del usuario</b>
 					</p>
@@ -59,14 +61,14 @@
 					</p>
 
 					<div class="mb-2">
-						<label for="usuarioUsaurio" class="form-label">Usaurio</label>
-						<input type="email" class="form-control" id="emailUsuario" name= usaurioU
+						<label for="usuarioUsaurio" class="form-label">Usuario</label>
+						<input type="text" class="form-control" id="usuarioU" name= "usuarioU"
 							aria-describedby="emailHelp"> 
 					</div>
 					
 					<div class="mb-2">
 						<label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
-						<select class="form-select" aria-label="Default select example">
+						<select class="form-select" aria-label="Default select example" name="tipoU">
   							<option selected>Selecciona el tipo de usuario</option>
   							<option value="1">1. Administrativo</option>
   							<option value="2">2. Cliente</option>
@@ -78,13 +80,13 @@
 					<div class="mb-2">
 						<label for="correoUsuario" class="form-label">Correo
 							electrónico</label> <input type="email" class="form-control" name= emailU
-							id="exampleInputEmail1" aria-describedby="emailHelp">
+							id="emailU" aria-describedby="emailHelp">
 					</div>
 
 					<div class="mb-2">
 						<label for="contrasenaUsuario" class="form-label">Contraseña</label>
 						<input type="password" class="form-control" name= passU
-							id="exampleInputPassword1">
+							id="passU">
 					</div>
 					<div class="mb-2 form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -92,7 +94,7 @@
 							terminos y condiciones</label>
 					</div>
 					<div class="d-grid gap-2 col-6 mx-auto p-3">
-						<button class="btn btn-primary" type="button">Enviar</button>
+						<button class="btn btn-primary" type="submit">Enviar</button>
 					</div>
 
 				</form>

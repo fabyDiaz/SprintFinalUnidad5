@@ -7,9 +7,9 @@ import model.entity.Usuario;
 
 public interface IUsuarios {
 
-	public List<Usuario> MostrarCapacitaciones();   
+	public List<Usuario> MostrarUsuarios();   
 	 
-	 public Usuario LeerCapacitaciones(int run);
+	 public Usuario LeerUsuarios(int run);
 
-	 public void CrearCapacitaciones(Usuario u);
+	 public void CrearUsuarios(Usuario u);
 }
