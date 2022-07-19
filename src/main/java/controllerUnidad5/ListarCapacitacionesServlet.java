@@ -31,8 +31,26 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
 		
-		request.setAttribute("capacitaciones", impCap.MostrarCapacitaciones());
-		getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+	request.setAttribute("capacitaciones",impCap.MostrarCapacitaciones());
+		
+		HttpSession s1=request.getSession();
+		HttpSession s2=request.getSession();
+		
+		String us = (String)s1.getAttribute("usuario");
+		String pa = (String)s2.getAttribute("password");
+		
+		if (us==null||pa==null) {
+			getServletContext().getRequestDispatcher("/view/ingreso.jsp").forward(request, response);
+		}
+		
+		if (us.equals("admin")&& pa.equals("1234")) {
+			request.setAttribute("capacitaciones", impCap.MostrarCapacitaciones());
+			getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+			} else {
+			System.out.println("NO SE PUDO INICIAR LA SESION");
+			getServletContext().getRequestDispatcher("/view/ingreso.jsp").forward(request, response);
+		}
+		
 		
 	/*	String op= new String ("op");
 		
@@ -55,27 +73,7 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 			
 			
 		}*/
-		
-		request.setAttribute("capacitaciones",impCap.MostrarCapacitaciones());
-		
-		HttpSession s1=request.getSession();
-		HttpSession s2=request.getSession();
-		
-		String us = (String)s1.getAttribute("usuario");
-		String pa = (String)s2.getAttribute("password");
-		
-		if (us==null||pa==null) {
-			getServletContext().getRequestDispatcher("/view/ingreso.jsp").forward(request, response);
-		}
-		
-		if (us.equals("admin")&& pa.equals("1234")) {
-			getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
-			} else {
-			System.out.println("NO SE PUDO INICIAR LA SESION");
-			getServletContext().getRequestDispatcher("/view/ingreso.jsp").forward(request, response);
-		}
-		
-		
+	
 	
 	}
 	
@@ -83,12 +81,12 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 		//doGet(request, response);
 		
 		String op= request.getParameter("op");
-		
+		//String Jsp = "/view/listarCapacitaciones.jsp";
 		
 		if (op.equalsIgnoreCase("lista")) {
-			HttpSession sesion=request.getSession(true);
+			//HttpSession sesion=request.getSession(true);
 			//List<Capacitacion> ListaCap = (List<Capacitacion>) sesion.getAttribute("capacitaciones");
-			List<Capacitacion> listaCap = new ArrayList<Capacitacion>();
+			//List<Capacitacion> listaCap = new ArrayList<Capacitacion>();
 			
 			Capacitacion cap = new Capacitacion(); 
 			
@@ -103,25 +101,29 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 			
 				getServletContext().getRequestDispatcher("/view/crearCapacitacion.jsp").forward(request, response);
 			}else {
-				cap.setIdCap(impCap. UltimoIDLista());   
-				System.out.println("Este es el id "+ impCap. UltimoIDLista()+1);
+				//cap.setIdCap(Integer.parseInt(request.getParameter("idCap")));   
+				//System.out.println("Este es el id "+ impCap. UltimoIDLista()+1);
 				cap.setRut(request.getParameter("rutCap"));
 				cap.setDia(request.getParameter("diaCap"));
 				cap.setHora(request.getParameter("horaCap"));
 				cap.setDuracion(request.getParameter("duracionCap"));
 				cap.setLugar(request.getParameter("lugarCap"));
+				System.out.println(request.getParameter("lugarCap"));
 				cap.setCantAsistentes(Integer.parseInt(request.getParameter("cantCap")));
 				System.out.println(Integer.parseInt(request.getParameter("cantCap")));
 				
 				
-				
-				impCap.AgregarCapacitaciones(cap);
-				listaCap=impCap.MostrarCapacitaciones();
+				impCap.CrearCapacitaciones(cap);
+				//request.setAttribute("op", "lista");
+				request.setAttribute("capacitaciones", impCap.MostrarCapacitaciones());
+				getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+				/*listaCap=impCap.MostrarCapacitaciones();
 				
 				sesion.setAttribute("capacitaciones", listaCap);
 				request.setAttribute("capacitaciones", sesion.getAttribute("capacitaciones"));
 				System.out.println("Aqui me deberia mostrar algo "+sesion.getAttribute("capacitaciones"));
-				getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);*/
+				
 				
 			}
 			

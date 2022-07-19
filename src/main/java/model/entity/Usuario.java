@@ -8,13 +8,10 @@ public class Usuario {
 	private String apellido;
 	private String fechaNacimiento;
 	private int run;
+	private int tipo;
 	
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Usuario(String usuario, String password, String nombre, String apellido, String fechaNacimiento, int run) {
+	public Usuario(String usuario, String password, String nombre, String apellido, String fechaNacimiento, int run,
+			int tipo) {
 		super();
 		this.usuario = usuario;
 		this.password = password;
@@ -22,6 +19,12 @@ public class Usuario {
 		this.apellido = apellido;
 		this.fechaNacimiento = fechaNacimiento;
 		this.run = run;
+		this.tipo = tipo;
+	}
+
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getUsuario() {
@@ -72,11 +75,21 @@ public class Usuario {
 		this.run = run;
 	}
 
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [usuario=" + usuario + ", password=" + password + ", nombre=" + nombre + ", apellido="
-				+ apellido + ", fechaNacimiento=" + fechaNacimiento + ", run=" + run + "]";
+				+ apellido + ", fechaNacimiento=" + fechaNacimiento + ", run=" + run + ", tipo=" + tipo + "]";
 	}
+	
+	
 	
 	
 	

@@ -39,32 +39,32 @@
 				class="col-4 shadow-sm p-4 mb-5 bg-light rounded position-absolute start-50 translate-middle-x">
 				
 				
-				<form action= "Inicio" method="post" class="row g-4">
+				<form action= "Inicio" method="post" id=formContact class="row g-4 needs-validation" novalidate>
 
 					<div class="col-md-6">
-						<input type="text" class="form-control" id="inputnombre"
+						<input type="text" class="form-control" id="nombre" name="nombre"
 							placeholder="Nombre">
 					</div>
 					<div class="col-md-6">
-						<input type="text" class="form-control" id="inputapellido"
+						<input type="text" class="form-control" id="apellido" name="apellido"
 							placeholder="Apellido">
 					</div>
 
 					<div class="col-md-6">
-						<input type="text" class="form-control" id="inpuemail"
+						<input type="text" class="form-control" id="email" name="email"
 							placeholder="Correo electrónico">
 					</div>
 					<div class="col-md-6">
-						<input type="text" class="form-control" id="inputtelefono"
+						<input type="text" class="form-control" id="telefono" name="telefono"
 							placeholder="Teléfono">
 					</div>
 
 					<div class="col-12">
-						<input type="text" class="form-control" id="inputAsunto"
+						<input type="text" class="form-control" id="asunto" name="asunto"
 							placeholder="Asunto">
 					</div>
 					<div class="col-12">
-						<textarea class="form-control" id="exampleFormControlTextarea1"
+						<textarea class="form-control" id="mensaje" name="mensaje"
 							rows="3" placeholder="Escribe aquí tu mensaje"></textarea>
 					</div>
 					
@@ -81,6 +81,7 @@
 	</div>
 
 
+
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous">
@@ -91,7 +92,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 		crossorigin="anonymous"></script>
-
-
+	
+	<script type="text/javascript"><%@ include file="/js/validacion.js" %></script>
 </body>
 </html>

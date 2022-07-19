@@ -78,8 +78,8 @@ public class Capacitacion {
 		return cantAsistentes;
 	}
 
-	public void setCantAsistentes(int cantAsistentes) {
-		this.cantAsistentes = cantAsistentes;
+	public void setCantAsistentes(int cantAsistentes ) {
+		this.cantAsistentes = cantAsistentes ;
 	}
 
 	@Override

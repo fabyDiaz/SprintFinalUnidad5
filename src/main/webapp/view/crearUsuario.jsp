@@ -63,6 +63,17 @@
 						<input type="email" class="form-control" id="emailUsuario" name= usaurioU
 							aria-describedby="emailHelp"> 
 					</div>
+					
+					<div class="mb-2">
+						<label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
+						<select class="form-select" aria-label="Default select example">
+  							<option selected>Selecciona el tipo de usuario</option>
+  							<option value="1">1. Administrativo</option>
+  							<option value="2">2. Cliente</option>
+  							<option value="3">3. Profesional</option>
+					</select>
+					</div>
+					
 
 					<div class="mb-2">
 						<label for="correoUsuario" class="form-label">Correo

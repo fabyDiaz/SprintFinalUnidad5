@@ -8,7 +8,8 @@ public interface ICapacitaciones{
 	
 	 public List<Capacitacion> MostrarCapacitaciones();   
 	 
+	 public Capacitacion LeerCapacitaciones(int idCap);
  
-	// public void AgregarCapacitaciones(Capacitacion c);
+	 public void CrearCapacitaciones(Capacitacion c);
 
 }

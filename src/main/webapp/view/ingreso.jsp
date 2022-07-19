@@ -18,25 +18,21 @@
 		<div class="row">
 			<div
 				class="col-4 shadow-sm p-3 mb-5 bg-light rounded position-absolute top-50 start-50 translate-middle">
-				<form action="Ingreso" method="post">
+				<form action="Ingreso" method="post" class=needs-validation novalidate>
 					<div class="mb-3">
 						<label for="exampleInputEmail1" class="form-label">Usuario</label>
-						<input type="text" class="form-control" id="usuarioid"
-							name="usuario" aria-describedby="emailHelp">
+						<input type="text" class="form-control" id="usuario"
+							name="usuario" aria-describedby="emailHelp" required>
+						<div class="invalid-feedback">Por favor ingresa tu usuario</div>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Contraseña</label>
 						<input type="password" class="form-control" name="password"
-							id="exampleInputPassword1">
+							id="password" required>
+							<div class="invalid-feedback">Por favor ingresa tu contraseña</div>
 					</div>
 
 					<button type="submit" class="btn btn-primary">Ingresar</button>
-					
-					<p>	
-					<% 
-					//out.println(request.getAttribute("mensaje"));
-					%>
-					</p>			
 					
 				</form>
 				
@@ -50,6 +46,7 @@
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 		crossorigin="anonymous"></script>
 
+	<script type="text/javascript"><%@ include file="/js/validacion.js" %></script>
 
 </body>
 </html>

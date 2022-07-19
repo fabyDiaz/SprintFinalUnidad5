@@ -22,19 +22,23 @@ public class ImplentarCapactiacion implements ICapacitaciones{
 	/*public ImplentarCapactiacion() {
 		super();
 		llenarCapacitacion();
-	}
+	}*/
 
 	@Override
-	public void AgregarCapacitaciones(Capacitacion c) {
-		 listaCap.add(c);
+	public void CrearCapacitaciones(Capacitacion c) {
+		 dao.create(c);
 			// System.out.println(c.getIdCap());
-	}*/
+	}
 
 	@Override
 	public List<Capacitacion> MostrarCapacitaciones() {
 		return dao.read();
 	}
 	
+	@Override
+	public Capacitacion LeerCapacitaciones(int idCap) {
+		return dao.read(idCap);
+	}
 /*	public Capacitacion ObtenerCapacitacion(int id) {
 		Capacitacion encontrado=null;
 		for (Capacitacion capacitacion:listaCap) {

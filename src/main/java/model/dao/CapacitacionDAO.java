@@ -14,7 +14,22 @@ public class CapacitacionDAO implements ICapacitacionDao {
 
 	@Override
 	public void create(Capacitacion c) {
-		// TODO Auto-generated method stub
+		try {
+			
+			String sql = "INSERT INTO asesoriaspr_db.capacitacion(rut, dia, hora, lugar, duracion, cantAsistentes) VALUES ('"+c.getRut()+"', '"+c.getDia()+"', '"+c.getHora()+"', '"+
+			c.getLugar()+"', '"+c.getDuracion()+"', '"+c.getCantAsistentes()+"');";
+			
+			Connection cnn = Conexion.getConnection();
+			
+			Statement stm = cnn.createStatement();
+			
+			stm.execute(sql);
+						
+			
+		} catch (SQLException e) {
+			System.out.println("Error al consultar la BD");
+			e.printStackTrace();
+		}
 
 	}
 
@@ -37,7 +52,7 @@ public class CapacitacionDAO implements ICapacitacionDao {
 						rs.getString("duracion"),rs.getInt("cantAsistentes")));
 			}
 			
-			
+		
 			
 		} catch (SQLException e) {
 			System.out.println("Error al consultar la BD");
@@ -49,8 +64,31 @@ public class CapacitacionDAO implements ICapacitacionDao {
 
 	@Override
 	public Capacitacion read(int idCap) {
-		// TODO Auto-generated method stub
-		return null;
+		Capacitacion cap = new Capacitacion();
+		
+		try {
+			
+			String sql = "Select idCap, rut, dia, hora, lugar, duracion, cantAsistentes from capacitacion where idCap = " + idCap;
+			Connection cnn = Conexion.getConnection();
+			
+			Statement stm = cnn.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			
+			if(rs.next()) {		
+				
+				cap=(new Capacitacion(rs.getInt("idCap"),rs.getString("rut"),
+						rs.getString("dia"),rs.getString("hora"),rs.getString("lugar"),
+						rs.getString("duracion"),rs.getInt("cantAsistentes")));
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Error al consultar la BD");
+			e.printStackTrace();
+		}
+		
+		return cap;
 	}
 
 	@Override
