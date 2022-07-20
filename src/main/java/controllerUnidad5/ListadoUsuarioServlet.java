@@ -70,7 +70,7 @@ public class ListadoUsuarioServlet extends HttpServlet {
 				request.getParameter("fechaU")==""||request.getParameter("usuarioU")==""||request.getParameter("tipoU")==""
 				||request.getParameter("emailU")==""||request.getParameter("passU")=="") {
 		
-			getServletContext().getRequestDispatcher("/view/crearCapacitacion.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/view/crearUsuario.jsp").forward(request, response);
 		}else {
 		
 			us.setRun(Integer.parseInt(request.getParameter("runU")));
@@ -85,7 +85,8 @@ public class ListadoUsuarioServlet extends HttpServlet {
 			impUs.CrearUsuarios(us);
 			//request.setAttribute("op", "lista");
 			request.setAttribute("usuarios", impUs.MostrarUsuarios());
-			getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
+			//request.setAttribute("us", us);
+			getServletContext().getRequestDispatcher("/view/listadoUsuarios.jsp").forward(request, response);
 			
 			
 		}

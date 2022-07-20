@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,11 +33,17 @@
 					<p>
 						<b>Datos del Administrativo</b>
 					</p>
+					
+					<div class="col-mb-12">
+						<label for="nombreUsuario" class="form-label">Nombre</label>
+						<input type="text" class="form-control" id="inputnombre" name=nombreU
+							placeholder="Nombre" value="${us.getNombre}">
+					</div>
 
 					<div class="col-mb-12">
-						<label for="nombreUsuario" class="form-label">Área</label>
-						<input type="text" class="form-control" id="inputnombre" name=nombreU
-							placeholder="Nombre">
+						<label for="area" class="form-label">Área</label>
+						<input type="text" class="form-control" id="areaA" name=areaA
+							placeholder="Ventas">
 					</div>
 					<div class="col-mb-12">
 						<label for="apellidoUsuario" class="form-label">Experiencia</label>
@@ -49,6 +59,10 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+	<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

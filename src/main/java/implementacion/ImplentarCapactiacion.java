@@ -39,17 +39,19 @@ public class ImplentarCapactiacion implements ICapacitaciones{
 	public Capacitacion LeerCapacitaciones(int idCap) {
 		return dao.read(idCap);
 	}
+	
+	
 /*	public Capacitacion ObtenerCapacitacion(int id) {
 		Capacitacion encontrado=null;
-		for (Capacitacion capacitacion:listaCap) {
+		for (Capacitacion capacitacion:) {
 			if (capacitacion.getIdCap()==id) {
 				encontrado=capacitacion;
 			}
 		}
 		return encontrado; 
-	}
+	}*/
 
-	 
+	 /*
 	 public void llenarCapacitacion() {
 		 Capacitacion cap1 = new Capacitacion(1,"12345678","Martes","12:30","Limache","30 minutos",20); 
 		 Capacitacion cap2 = new Capacitacion(2,"12345679","Lunes","02:30","Viña del Mar","40 minutos",30); 

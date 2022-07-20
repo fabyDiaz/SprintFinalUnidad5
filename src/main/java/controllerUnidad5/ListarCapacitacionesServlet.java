@@ -29,7 +29,6 @@ public class ListarCapacitacionesServlet extends HttpServlet {
    // ImplentarCapactiacion impCap= new ImplentarCapactiacion();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//getServletContext().getRequestDispatcher("/view/listarCapacitaciones.jsp").forward(request, response);
 		
 	request.setAttribute("capacitaciones",impCap.MostrarCapacitaciones());
 		
@@ -52,7 +51,7 @@ public class ListarCapacitacionesServlet extends HttpServlet {
 		}
 		
 		
-	/*	String op= new String ("op");
+		/*String op= new String ("op");
 		
 		if (op.equalsIgnoreCase("new")) {
 			//request.setAttribute("op", op);

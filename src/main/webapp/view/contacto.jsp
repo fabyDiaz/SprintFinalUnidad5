@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,11 +43,11 @@
 				class="col-4 shadow-sm p-4 mb-5 bg-light rounded position-absolute start-50 translate-middle-x">
 				
 				
-				<form action= "Inicio" method="post" id=formContact class="row g-4 needs-validation" novalidate>
+				<form action= "Contacto" method="post" id=formContact class="row g-4 needs-validation" novalidate>
 
 					<div class="col-md-6">
 						<input type="text" class="form-control" id="nombre" name="nombre"
-							placeholder="Nombre">
+							placeholder="Nombre" required>
 					</div>
 					<div class="col-md-6">
 						<input type="text" class="form-control" id="apellido" name="apellido"
@@ -52,7 +56,7 @@
 
 					<div class="col-md-6">
 						<input type="text" class="form-control" id="email" name="email"
-							placeholder="Correo electrónico">
+							placeholder="Correo electrónico" required>
 					</div>
 					<div class="col-md-6">
 						<input type="text" class="form-control" id="telefono" name="telefono"
@@ -61,16 +65,21 @@
 
 					<div class="col-12">
 						<input type="text" class="form-control" id="asunto" name="asunto"
-							placeholder="Asunto">
+							placeholder="Asunto" required>
 					</div>
 					<div class="col-12">
 						<textarea class="form-control" id="mensaje" name="mensaje"
-							rows="3" placeholder="Escribe aquí tu mensaje"></textarea>
+							rows="3" placeholder="Escribe aquí tu mensaje" required></textarea>
 					</div>
 					
 					<div class="d-grid gap-2 col-6 mx-auto p-3">
   						<button class="btn btn-primary" type="submit">Enviar</button>
 					</div>
+					
+					<!-- CSS only 
+					
+					<h3><%= request.getAttribute("mensaje") %></h3>
+					<h3><c:out value="mensaje"></c:out></h3> -->
 
 				</form>
 			</div>
@@ -80,7 +89,9 @@
 
 	</div>
 
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 
+	<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
