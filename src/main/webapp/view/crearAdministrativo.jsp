@@ -34,11 +34,6 @@
 						<b>Datos del Administrativo</b>
 					</p>
 					
-					<div class="col-mb-12">
-						<label for="nombreUsuario" class="form-label">Nombre</label>
-						<input type="text" class="form-control" id="inputnombre" name=nombreU
-							placeholder="Nombre" value="${us.getNombre}">
-					</div>
 
 					<div class="col-mb-12">
 						<label for="area" class="form-label">Área</label>
